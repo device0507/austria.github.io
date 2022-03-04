@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button{
+            background-color: red;
+            padding-top:50px;
+            padding-bottom: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 50%;
+            position:absolute;
+            left:45%;
+            top:35%;
+            font-size:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contianer">
+        <button onclick="started()" id="start">Start Now!</button>
+    </div>
+    <script>
+        var point=0;
+      var ques=["What is the captial city of Austria?\na.Sydney b.Berlin c.Budapest d.Vienna"
+                  ,"which country borders Austria?\na.Germany b.France c. Belgium d. Netherlands "
+                  ,"Was Austria a part of of France?\na.True b.False"
+                  ,"What is the population of Austria?\na.9 MILLION b.10MILLION c.8MILLION d.11MILLION"
+                  ,"What is the main religion of Austria?\na.Christianity b.Buddhism c.catholic d.五斗米道"];
+        var anws=["D","A","B","A","C"]
+        function started(){
+            // document.getElementById("start").style.display="none";
+            quiz()
+        }
+        function quiz(){
+            ques.forEach(function(val,i){
+                var a=prompt(val);
+                if (a==anws[i]){
+                    alert("Correct")
+                    point+=1;
+                }
+                else{
+                    alert("Wrong!")
+                }
+            })
+            end()
+        }
+        function end(){
+            alert("You get "+point+" points for total.")
+        }
+
+    </script>
+</body>
+</html>
